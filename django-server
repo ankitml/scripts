@@ -38,7 +38,5 @@ WSGIPythonPath /home/codes/learned/
 static_root = "/var/www/djano_learned"
 static_url = "djano_learned"
 
-apt-get install python-beautifulsoup , python-requests
+apt-get install python-beautifulsoup 
 
-
-pip install django-tinymce
