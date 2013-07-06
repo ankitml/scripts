@@ -15,5 +15,6 @@ sudo app-get install pip
 pip install Django
 
 #Python packages
-sudo apt-get install python-mysqldb
+sudo apt-get install python-mysqldb, python-tk
 
+sudo pip install BeautifulSoup
