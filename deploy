@@ -1,0 +1,8 @@
+#!/bin/sh
+dir=$(pwd)
+server=192.241.198.85
+user=root
+subcommand=$user@$server:$dir/$1
+command="scp $1 $subcommand"
+echo $command
+$command

@@ -11,7 +11,7 @@ mv phpMyAdmin-4.0.3-all-languages pma
 ## This needs to be added to php.ini - "extension=mysqli.so"
 
 #Django Install
-sudo app-get install pip
+sudo apt-get install python-pip
 pip install Django
 
 #Python packages
