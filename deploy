@@ -1,8 +1,13 @@
-#!/bin/sh
-dir=$(pwd)
-server=192.241.198.85
+#!/bin/sh                                                                                          
+dir=$(pwd)                                                                                            
+server=192.241.198.85                                                                                 
 user=root
-subcommand=$user@$server:$dir/$1
-command="scp $1 $subcommand"
-echo $command
-$command
+if [ "$1" = "ssh" ]
+then
+  command="ssh $user@$server"
+else
+  subcommand=$user@$server:$dir/$1                                                                   
+  command="scp $1 $subcommand"
+fi
+echo $command                                                                                      
+$command   
