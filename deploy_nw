@@ -1,0 +1,27 @@
+#!/bin/sh                                                                                          
+#build a test suite for this script
+dir=$(pwd) 
+server=192.241.198.85
+user=root
+if [ "$1" = "ssh" ]
+then
+  command="ssh $user@$server"
+else
+  if [ "$2" != "orig" ]
+  then
+    #convert all instances of localhost to server in the file and upload that file
+    #delete this newly created file from here
+    awkcommand="\'{gsub(/localhost/,\"$server\");print}\'"
+    awk $awkcommand > awktempfile
+    scpcommand="scp awktempfile $user@$server:$dir/$1"
+    echo $scpcommand                                                                                      
+    $scpcommand   
+    rm awktempfile
+  else
+    #just upload the file
+    subcommand=$user@$server:$dir/$1                                                                   
+    command="scp $1 $subcommand"
+    echo $command                                                                                      
+    $command   
+  fi
+fi
