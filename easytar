@@ -1,0 +1,41 @@
+#!/bin/sh
+
+if [ "$1" = "-c" ]
+then
+  if [ "$2" = "bz2" ]
+  then
+    ##easytar create bz2 filename_to_be_created.tgz file_or_directory_to_be_compressed
+    #To create a .bz2 archive:
+    tar -cjvf $3 $4
+  fi
+
+  if [ "$2" = "gz" ]
+  then
+    ##easytar create gz filename_to_be_created.tgz file_or_directory_to_be_compressed
+    #To create a .gz archive:
+    tar -czvf $3 $4
+  fi
+fi
+
+
+  if [ "$2" = "none" ]
+  then
+    ##easytar extract none filename_to_be_extracted
+    #to extract an uncompressed tar
+    tar -xvf $3
+  fi
+
+  if [ "$2" = "gz" ]
+  then
+    ##easytar extract gz filename_to_be_extracted
+    #To extract a .gz archive:
+    tar -xzvf $3
+  fi
+
+  if [ "$2" = "bz2" ]
+  then
+    ##easytar extract bz2 filename_to_be_extracted
+    #To extract a .bz2 archive:
+    tar -xjvf $3
+  fi
+
