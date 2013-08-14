@@ -2,12 +2,22 @@
 dir=$(pwd)                                                                                            
 server=192.241.198.85                                                                                 
 user=root
-if [ "$1" = "ssh" ]
+if [ "$1" = "-ssh" ]
 then
   command="ssh $user@$server"
+elif [ "$1" = "-err" ]
+then
+  command="tail -f /var/log/apache2/error.log"
+elif [ "$1" = "-ml" ]
+then
+    #modify mode.. modify localhost with server
+    sed "s/localhost/$server/g" $2 > /home/refreshing2/sedfile
+    subcommand=$user@$server:$dir/$2                                                                   
+    command="scp /home/refreshing2/sedfile $subcommand"
+    #rm sedfile
 else
-  subcommand=$user@$server:$dir/$1                                                                   
-  command="scp $1 $subcommand"
+    subcommand=$user@$server:$dir/$1                                                                   
+    command="scp $1 $subcommand"
 fi
 echo $command                                                                                      
 $command   
