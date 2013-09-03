@@ -24,3 +24,7 @@ sudo apt-get install libapache2-mod-wsgi
 sudo apt-get install python-mysqldb python-tk python-beautifulsoup python-requests libjpeg-dev 
 sudo pip install django-tinymce django-localflavor PIL south requests_oauthlib
 pip install flask Scrappy httplib2
+
+
+#new packages for contctus
+pip install django-suit django_extensions django-suit-redactor
