@@ -63,3 +63,12 @@ ps aux | grep apache
 
 #in wsgi set os.chdir("/home/local/username/project/scrapy/modulename")
 pip install PIL
+
+
+#for restarting apache from python
+#in /etc/sudoers add 2 lines
+Cmnd_Alias RAPACHE = /etc/init.d/apache2                                                           
+www-data ALL=NOPASSWD: RAPACHE
+
+#then call
+sudo /etc/init.d/apache2 reload
