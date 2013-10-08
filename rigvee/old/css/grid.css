@@ -1,0 +1,256 @@
+/* Computer */
+.grid_1 { width: 6.5%; } 
+.grid_2 { width: 15%; } 
+.grid_3 { width: 23.5%; } 
+.grid_4 { width: 32%; } 
+.grid_5 { width: 40.5%; }
+.grid_6 { width: 49%; } 
+.grid_7 { width: 57.5%; } 
+.grid_8 { width: 66%; } 
+.grid_9 { width: 74.5%; } 
+.grid_10 { width: 83%; } 
+.grid_11 { width: 91.5%; } 
+.grid_12 { width: 100%; } 
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	margin: 0 20px 20px 0;
+	float: left;
+	display: block;
+}
+
+.alpha			{margin-left:0;}
+.omega			{margin-right:0;}
+.gallery-list 	{margin:0 -25px 0 0;padding:0;}
+
+.container{
+	width: 1000px;
+	max-width: 1000px;
+	margin: auto;
+	
+}
+
+
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after{position:relative;z-index:99;clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
+
+
+@media only screen and (min-width: 767px) and (max-width: 1023px) {		
+	#logo {width:200px;}
+	
+	.padding_slide1 {padding:150px 0 30px;}
+	.effects_1 {top:-73px;}
+	#slide1 h1 {font-size:60px;line-height:53px;}
+	#slide1 p {font-size:18px;line-height:22px;}
+	#slide1 a.button {margin-bottom:-50px;}
+	
+	.gallery-list {margin-left:117px;}
+	
+	.team_h {width:227px;}
+	.team_block a:hover .team_h {height:261px;}
+	
+	#slide6 .effect_2 {display:none;}
+	
+	.recent_text span {font-size:14px;}
+	
+	#slide6 .grid_5 {width:290px !important;}
+	#slide6 .grid_4 {width:228px !important;}
+	
+	.padding_slide7 {padding:100px 0 70px;}
+	#slide7 span {font-size:47px;line-height:50px;}
+	
+	.padding_slide9 {padding:70px 0 40px;}
+	#slide9 p {font-size:40px;line-height:40px;}
+	
+	#slide10 h4 {font-size:18px;line-height:25px;}
+	
+	.contact_form input[type="text"], .contact_form textarea {width:258px;}
+
+/* _____________ menu ______________ */
+	.navigation li {margin-left:20px;}
+/* ____________ //menu _____________ */
+	
+	.container { width: 724px; }
+	.container .alpha        { margin-left: 0; margin-right: 5px; }
+	.container .omega        { margin-right: 0; }
+	.container .respond_pad {padding-right:20px;}
+	
+	.grid_3			{ width: 166px; }
+	.grid_4			{ width: 228px; }
+	.grid_5      		{ width: 290px; }
+	.grid_6      		{ width: 352px; }
+	.grid_7   		{ width: 414px; }
+	.grid_8   		{ width: 475px; }
+	.grid_9			{ width: 538px; }
+	.grid_12		{ width: 724px; }
+}
+
+@media only screen and (max-width: 766px) {
+	.menu {height:116px;}
+	
+	img.about_img {float:none;margin:0 0 10px 0;}
+
+	.navigation li span {display:none;}
+	
+	#slide6 .effect_2 {display:none;}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 766px) {
+	.menu {height:116px;}
+	
+	#logo {text-align:center;}
+	
+	.padding_slide1 {padding:155px 0 30px;}
+
+	#slide1 h1 {font-size:44px;line-height:38px;padding-bottom:10px;}
+	#slide1 h2 {font-size:16px;line-height:20px;}
+	
+	#slide1 p {font-size:18px;}
+	#slide1 a.button {margin-bottom:-50px;}
+	
+	.filtr_bg {margin-bottom:50px;}
+	
+	.gallery-list {margin-left:91px;}
+	
+	.padding_slide5 {padding:40px 0;}
+	
+	.tours_content {width:235px !important;margin-left:93px;}
+	
+	#slide6 {padding-top:123px;background:url(../images/contact_block_bg.jpg) repeat left top;}
+	.contact_block {position:relative;top:0;}
+	
+	.padding_slide7 {padding:100px 0 70px;}
+	#slide7 span {font-size:30px;line-height:40px;}
+	
+	#slide8 h4,
+	#slide3 h4 {font-size:18px;line-height:25px;}
+	
+	.team_block {width:320px !important;margin-left:47px;}
+	
+	.padding_slide9 {padding:70px 0 40px;}
+	#slide9 p {font-size:24px;line-height:28px;}
+	
+
+/* _____________ menu ______________ */
+	#nav {margin:0;}
+	ul.navigation {float:none;margin:0;}
+	.navigation li {margin-left:12px;font-size:13px;padding-bottom:15px;}
+/* ____________ //menu _____________ */	
+
+	.container { width: 420px; }
+	
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {width:420px;}
+	
+	.fright{float:none;}
+	.fleft{float:none;}
+	
+}
+
+@media screen and (max-width : 479px) {	
+	.menu {height:130px;}
+	
+	h1 {font-size:30px;}
+	
+	#logo {text-align:center;}
+
+	.padding_slide1 {padding:155px 0 30px;}
+	.effects_1 {display:none;}
+	#slide1 h1 {font-size:27px;line-height:30px;padding-bottom:10px;}
+	#slide1 p {font-size:18px;line-height:22px;}
+	
+	#slide1 a.button {margin-bottom:-50px;}
+	
+	.filtr_bg {margin-bottom:50px;}
+	
+	.team_block a:hover .team_h {height:346px;}
+	
+	.padding_slide3 {padding:45px 0 30px;}
+	
+	.gallery-list {margin-left:33px;}
+	
+	.flexslider {min-height:278px;}
+	
+	.padding_slide5 {padding:40px 0;}
+	.tours_content {width:235px !important;margin-left:32px;}
+		
+	.padding_slide7 {padding:100px 0 70px;}
+	#slide7 span {font-size:22px;line-height:24px;}
+	
+	#slide8 h4, #slide3 h4, #slide10 h4 {font-size:18px;line-height:25px;}
+	
+	#slide6 .grid_4 {width:260px !important;}
+	
+	#slide6 {padding-top:123px;background:url(../images/contact_block_bg.jpg) repeat left top;}
+	.contact_block {position:relative;top:0;}
+	
+	.contact_form input[type="text"], .contact_form textarea {width:215px;margin-left:0;}
+	
+	#back_top a.button {margin-top:-70px;}
+
+/* _____________ menu ______________ */
+	#nav {margin:0;}
+	ul.navigation {padding:0;margin:8px 0 0 0;}
+	.navigation li {margin-left:20px;padding-bottom:4px;}
+	.navigation li:first-child {margin-left:0;}
+	.navigation li:hover, .navigation .active {border-bottom:none;}
+/* ____________ //menu _____________ */	
+	.container { width: 300px; }
+
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {
+		width:300px;
+	}
+	
+	.fright{float:none;}
+	.fleft{float:none;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
