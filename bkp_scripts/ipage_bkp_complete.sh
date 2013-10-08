@@ -3,8 +3,7 @@ target_bkp="/home/bkp/"
 tar_name="backup_ipage"
 target="/tmp/$tar_name/"
 # array of folders to be backup 
-source_dir=( /backup_script/archive_03-10-2013)
-
+source_dir=( /backup_script  /fl /hky /iank.it /rigvee)
 echo "********************************"
 echo "       GRAND BACKUP STARTS"
 echo "********************************"
@@ -25,3 +24,4 @@ echo "       GRAND BACKUP FINISHES"
 echo "********************************"
 
 
+# source_dir=(/192.241.234.155 /agrinnovate /apps.sanch.it-redirect /backup_script /cgi-bin /contctus /dewacademy /endoillu /energyshire /epinx /fl /forfreelancers /hky /iank.it /jhinga /rigvee /rs /saanp /saanpnew /sanchit /ssl /stats /try.sanch.it-redirect /way2l /wayl /wayl2 /waylalpha /.htaccess /404.html /Home.html /index.html /rs.zip)
