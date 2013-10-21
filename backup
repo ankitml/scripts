@@ -1,0 +1,44 @@
+#!/bin/bash
+# My first script 
+
+#Today's date and Time 
+DATE=$(date +"%d-%m-%Y")
+TIME=$(date +"%H:%M")
+
+#This is the directory name to backup
+web_dir="contctus"
+dir="/var/www/"
+cd $dir
+
+echo "------------- $web_dir's backup starts --------------->"
+
+tar -zcf $web_dir.tar.gz $web_dir
+mv $web_dir.tar.gz $web_dir$DATE$TIME.tar.gz
+
+
+#Creating backup directory in home
+mkdir /home/contctus/
+mkdir /home/contctus/backup/
+
+
+
+mv $web_dir$DATE$TIME.tar.gz /home/contctus/backup
+
+hostname="localhost"
+username="root"
+password="r2XL8pW9SaVen7cM"
+database_name="contctus"
+
+echo "----------- $database_name's backup starts ----------->"
+mysqldump --host=$hostname --user=$username --password=$password $database_name > $database_name.sql
+
+
+mv $database_name.sql /home/contctus/backup
+
+cd /home/contctus/
+
+tar -zcf backup.tar.gz backup/
+rm -r backup/
+
+echo " --- !! done !! ---" 
+
