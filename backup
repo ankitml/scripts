@@ -1,5 +1,5 @@
 #!/bin/bash
-# My first script 
+# backup script 
 
 #Today's date and Time 
 DATE=$(date +"%d-%m-%Y")
