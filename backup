@@ -28,10 +28,14 @@ hostname="localhost"
 username="root"
 password="r2XL8pW9SaVen7cM"
 database_name="contctus"
+dev="contctus_dev"
 
 echo "----------- $database_name's backup starts ----------->"
 mysqldump --host=$hostname --user=$username --password=$password $database_name > $database_name.sql
 
+echo "--------- importing $database_name.sql into contctus_dev ------->"
+mysql -u $username -p$password -h $hostname $dev < $database_name.sql
+echo "----------importing done-------------------"
 
 mv $database_name.sql /home/contctus/backup
 
@@ -40,5 +44,5 @@ cd /home/contctus/
 tar -zcf backup.tar.gz backup/
 rm -r backup/
 
-echo " --- !! done !! ---" 
+echo " --- !! backup done !! ---" 
 
