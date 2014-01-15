@@ -1,0 +1,275 @@
+/* Computer */
+.grid_1 { width: 6.5%; } 
+.grid_2 { width: 15%; } 
+.grid_3 { width: 23.5%; } 
+.grid_4 { width: 32%; } 
+.grid_5 { width: 40.5%; }
+.grid_6 { width: 49%; } 
+.grid_7 { width: 57.5%; } 
+.grid_8 { width: 66%; } 
+.grid_9 { width: 74.5%; } 
+.grid_10 { width: 83%; } 
+.grid_11 { width: 91.5%; } 
+.grid_12 { width: 100%; } 
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	margin: 0 20px 20px 0;
+	float: left;
+	display: block;
+}
+
+.alpha			{margin-left:0;}
+.omega			{margin-right:0;}
+.gallery-list 	{margin:0 -25px 0 0;padding:0;}
+
+.container{
+	width: 1000px;
+	max-width: 1000px;
+	margin: auto;
+	
+}
+
+
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after{position:relative;z-index:99;clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
+
+
+@media only screen and (min-width: 767px) and (max-width: 1023px) {
+	
+	#slide1 span {font-size:50px;line-height:70px;}
+	
+	.padding_slide1 {padding:150px 0 30px;}
+		
+	.gallery-list {margin-left:117px;}
+	
+	#slide3 p, #slide5 p, #slide7 p {font-size:40px;line-height:45px;}
+	
+	#slide4 .hover_img {width:228px;height:208px;}
+	#slide4 .omega {margin-right:20px;}
+	
+	.serv_block p {font-size:18px;}
+	
+	.recent_text span {font-size:14px;}
+
+	
+	.contact_form input[type="text"], .contact_form textarea {width:176px;}
+	.contact_btn {top:112px;left:0;padding:10px 0;}
+	.send_btn {left:132px;}
+	#note .notification_error {top:154px;font-size:14px;line-height:16px;}
+	
+
+/* ___________ SERV_BLOCK __________ */
+	
+	
+/* __________ //SERV_BLOCK _________ */
+
+/* _____________ menu ______________ */
+	.navigation li {margin-left:20px;}
+/* ____________ //menu _____________ */
+	
+	.container { width: 724px; }
+	.container .alpha        { margin-left: 0; margin-right: 5px; }
+	.container .omega        { margin-right: 0; }
+	.container .respond_pad {padding-right:20px;}
+	
+	.grid_3			{ width: 166px; }
+	.grid_4			{ width: 228px; }
+	.grid_5      		{ width: 290px; }
+	.grid_6      		{ width: 352px; }
+	.grid_7   		{ width: 414px; }
+	.grid_8   		{ width: 475px; }
+	.grid_9			{ width: 538px; }
+	.grid_12		{ width: 724px; }
+}
+
+@media only screen and (max-width: 766px) {
+	.menu {height:116px;}
+	
+	img.about_img {float:none;margin:0 0 10px 0;}
+
+	.navigation li span {display:none;}
+	
+	#slide6 .effect_2 {display:none;}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 766px) {
+	.menu {height:116px;}
+	
+	#logo {text-align:center;}
+	
+	#slide2 .grid_4 {width:125px;}
+	.team_block h4 {font-size:16px;}
+	.team_block p {font-size:11px;}
+	
+	.caroufredsel_wrapper {width:420px !important;height:840px !important;}
+	#carousel_fred {height:840px !important;}
+	.about_block1 h4 {font-size:24px;}
+	.about_block1 p {font-size:14px !important;line-height:20px !important;}
+	.about_block3 .grid_5 {float:none;}
+	#carousel_fred p {font-size:12px;line-height:16px;}
+	.tab-pane img {width:100px;}
+	
+	.padding_slide1 {padding:155px 0 30px;}
+
+	#slide1 span {font-size:28px;line-height:38px;}
+	
+	#slide2, #slide4, #slide6, #slide8 {padding-top:103px;}
+	
+	#slide3 .bottom_center_bg img {bottom:-60px;}
+	
+	.padding_slide3, .padding_slide5, .padding_slide7 {padding:100px 0 60px;}
+	#slide3 p, #slide5 p, #slide7 p {font-size:27px;line-height:30px;}
+	
+	.filtr_bg {margin-bottom:125px;}
+	
+	.gallery-list .grid_4 {margin-left:52px;}
+	.item_description {width:320px;}
+	
+	#slide5 .bottom_center_bg img {bottom:-60px;}
+	#slide7 .bottom_center_bg img {bottom:-60px;}
+	
+	.contact_form input[type="text"], .contact_form textarea {
+		width:387px;
+		margin-left:0;
+		position:static;
+	}
+	.contact_form input[type="text"] {width:175px;}
+	.contact_btn, #note .notification_error, #note .notification_ok {position:static;margin-bottom:15px;}
+
+/* ___________ SERV_BLOCK __________ */
+	.serv_block p {padding-bottom:20px;}
+/* __________ //SERV_BLOCK _________ */
+
+/* _____________ menu ______________ */
+	#nav {margin:0;}
+	.navigation li {padding:7px 18px 8px;}
+	ul.navigation {float:none;margin:0;}
+/* ____________ //menu _____________ */	
+
+	.container { width: 420px; }
+	
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {width:420px;}
+	
+	.fright{float:none;}
+	.fleft{float:none;}
+	
+}
+
+@media screen and (max-width : 479px) {	
+	.menu {height:130px;}
+	
+	#logo {text-align:center;}
+	
+	h1 {width:280px;font-size:50px;padding-top:30px;}
+	
+	.padding_slide1 {padding:155px 0 30px;}
+	
+	#slide1 span {font-size:18px;line-height:30px;}
+	
+	
+	
+	.filtr_bg {margin-bottom:125px;}
+	
+	.padding_slide3, .padding_slide5, .padding_slide7 {padding:60px 0 35px;}
+	#slide3 p, #slide5 p, #slide7 p {font-size:18px;line-height:24px;}
+	
+	#slide2 .grid_4 {width:85px;}
+	.team_block h4 {font-size:16px;}
+	.team_block p {font-size:11px;}
+	.caroufredsel_wrapper {width:420px !important;height:840px !important;}
+	#carousel_fred {height:840px !important;}
+	.about_block1 h4 {font-size:18px;}
+	.about_block1 p {font-size:14px !important;line-height:20px !important;}
+	.about_block3 .grid_5 {float:none;}
+	#carousel_fred p {font-size:12px;line-height:16px;}
+	.tab-pane img {width:100px;}
+	.nav-tabs > li {width:135px;}
+	.about_block3 h4 {font-size:18px;line-height;22px;}
+	.nav-tabs > li > a {padding:8px 0 8px 20px;}
+	#skills_block li {height:20px;}
+	#skills_block li span {height:22px;}
+	
+	#slide4 .hover_img {width:300px;height:274px;}
+	
+	#slide3 .bottom_center_bg img,
+	#slide5 .bottom_center_bg img,
+	#slide7 .bottom_center_bg img {bottom:-35px;}
+	
+	#slide8 h4, #slide3 h4, #slide10 h4 {font-size:18px;line-height:25px;}
+	
+	.contact_form input[type="text"], .contact_form textarea {
+		width:265px;
+		margin-left:0;
+		position:static;
+	}
+	.contact_form input[type="text"] {width:265px;}
+	.contact_btn, #note .notification_error, #note .notification_ok {position:static;margin-bottom:15px;}
+
+/* ___________ SERV_BLOCK __________ */
+		
+/* __________ //SERV_BLOCK _________ */
+/* _____________ menu ______________ */
+	#nav {margin:0;}
+	.navigation li {padding:15px 7px 15px;}
+/* ____________ //menu _____________ */	
+	.container { width: 300px; }
+
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {
+		width:300px;
+	}
+	
+	.fright{float:none;}
+	.fleft{float:none;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 <?php
 
-$Date = 'bkp_'.date('d-m-Y');//. '@'.date('h.i.s');
+$Date = 'bkp_'.date('d-m-Y'); //'@'.date('h.i.s');
 // Define the name of the backup directory
 define('BACKUP_DIR', $Date) ; 
 
@@ -15,9 +15,7 @@ if (!file_exists(BACKUP_DIR)) mkdir(BACKUP_DIR , 0777) ;
 if (!is_writable(BACKUP_DIR)) chmod(BACKUP_DIR , 0777) ; 
 
 
-$nextLine = <<<msg
-<br /> 
-msg;
+print "\r\n";
 
 $DB_NAME = array(array('beta.fourtraxlifestyles','wrd_4b72nf253n'),
 array('blog.rigvee','wrd_16onhol3g1'),
@@ -25,6 +23,11 @@ array('wiki.rigvee','mdw_nniolj3m7h'),
 array('khetiking','wrd_kaibco4o7d'),
 array('iank.it','wrd_4ji7kcncji'),
 array('iank.it_jim','wrd_m5ilm3bmbd'));
+ 
+
+/*
+
+*/
 
 // array('1.beta.fourtraxlifestyles','wrd_bb6bm17olg'),
 // array('1fourtraxlifestyles','wrd_chdffch7o7'),
@@ -32,11 +35,16 @@ array('iank.it_jim','wrd_m5ilm3bmbd'));
 // array('3fourtraxlifestyles','wrd_ji45ngn3d2'),
 
 echo "Number of Databases to be backup :-" .count($DB_NAME);
-echo $nextLine ; 
+print "\r\n";
 
-echo "*****************************************************";
-echo "<pre>                    BackUp started              </pre>";
-echo "*****************************************************<br>";
+printf("*****************************************************\r\n");
+echo "\r\n";
+print "..................BackUp started..................\r\n";
+
+echo "\r\n";
+
+printf("*****************************************************\r\n");
+echo "\r\n";
 
 for($index=0; $index<count($DB_NAME); $index++)
 {
@@ -44,7 +52,8 @@ for($index=0; $index<count($DB_NAME); $index++)
      Define the filename for the sql file
       If you plan to upload the  file to Amazon's S3 service , use only lower-case letters 
      */
-      echo "..........Processing Db of ".$DB_NAME[$index][0]." that is ".$DB_NAME[$index][1]."...............<br>";
+      echo "..........Processing Db of ".$DB_NAME[$index][0]." that is ".$DB_NAME[$index][1]."...............";
+     print"\r\n";
      
       $fileName = $DB_NAME[$index][0].'.sql' ; 
       // Set execution time limit . '@'.date('h.i.s').'
@@ -71,7 +80,7 @@ for($index=0; $index<count($DB_NAME); $index++)
      {
       echo "Connected successfully to database  of :-".$DB_NAME[$index][0]." that is ".$DB_NAME[$index][1];
     }
-    echo $nextLine ; 
+   print"\r\n";
 
        // Introduction information
 
@@ -100,8 +109,8 @@ for($index=0; $index<count($DB_NAME); $index++)
     {  
 
       $result = $mysqli->query('SELECT * FROM '. $table) ; 
-      echo " Processing table - ".$table."(".mysqli_num_rows($result)." rows)\n\n";
-      echo $nextLine ; 
+      echo " Processing table - ".$table."(".mysqli_num_rows($result)." rows)";
+      print"\r\n";
 
     // Get number of fields (columns) of each table
       $num_fields = $mysqli->field_count;
@@ -123,7 +132,6 @@ for($index=0; $index<count($DB_NAME); $index++)
         $return .= 'INSERT INTO `'.$table .'`  VALUES ( '  ;
             // Extract data of each row 
                 // echo serialize($rowdata);
-                // echo $nextLine;
          for($i=0; $i<$num_fields; $i++)
          {
           $return .= '"'.$rowdata[$i] . "\"," ;
@@ -150,6 +158,6 @@ if( $resOpen )
 $zip->close() ;
 
 echo "..........Database with file name : ".$fileName."-has been generated..........";
-echo $nextLine ; 
-echo $nextLine ; 
+print"\r\n";
+print"\r\n";
 }

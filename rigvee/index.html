@@ -1,0 +1,604 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<title>Rigvee Technologies - Delivering Solutions</title>
+        <link rel="icon" type="image/png" href="./favicon.ico">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	
+	<script type="text/javascript" language="javascript" src="js/carousel/jquery.carouFredSel-6.2.0-packed.js"></script>
+	<script type="text/javascript" language="javascript" src="js/carousel/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/carousel/jquery.touchSwipe.min.js"></script>
+	
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.src.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#ajax-contact-form").submit(function() {
+				var str = $(this).serialize();		
+				$.ajax({
+					type: "POST",
+					url: "contact_form/contact_process.php",
+					data: str,
+					success: function(msg) {
+						// Message Sent - Show the 'Thank You' message and hide the form
+						if(msg == 'OK') {
+							result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+							$("#fields").hide();
+						} else {
+							result = msg;
+						}
+						$('#note').html(result);
+					}
+				});
+				return false;
+			});
+
+		});		
+	</script>
+	
+	<script type="text/javascript" language="javascript">
+			$(function() {
+
+				//	Scrolled by user interaction
+				$('#carousel_fred').carouFredSel({
+					auto: false,
+					prev: '#prev2',
+					next: '#next2',
+					pagination: "#pager2",
+					mousewheel: true,
+					swipe: {
+						onMouse: true,
+						onTouch: true
+					}
+				});
+			});
+		</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42734076-1', 'rigvee.com');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42734076-2']);
+  _gaq.push(['_setDomainName', 'rigvee.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<!-- Header/Menu -->
+<div class="menu">	
+	<div class="container clearfix">
+
+		<div id="logo" class="fleft">
+			<a href="javascript:void(0);"><img src="images/glogo1.png" style="padding:10px 0 0 0"/></a>
+		</div>
+		
+		<div id="nav" class="fright">
+			<ul class="navigation">
+				<li data-slide="1">Home</li>
+				<li data-slide="2">About</li>
+				<li data-slide="4">Services</li>
+				<li data-slide="6">Portfolio</li>
+				<li data-slide="8">Contact</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	
+	</div>
+</div>
+
+<!-- Home -->
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="padding_slide1">
+		<div class="container clearfix">
+
+			<div id="content" class="grid_12">
+				<div class="filtr_bg">
+					<span>Delivering Solutions</span>								
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom_center_bg"><img src="images/bottom_center_bg.png" /></div>
+</div>
+
+<!-- About Us -->
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>About</span></h1>
+		</div>
+		
+		<div id="content" class="grid_12">
+			<div class="list_carousel">
+				<ul id="carousel_fred">
+					<li>
+						<div class="about_block1">
+							<div class="grid_12">							
+								<img src="images/about_img1.png" alt="" />
+								<br><br>
+								<p>Rigvee Technologies collaborates with small and medium businesses to translate their business goals and requirements into unique IT products and services. We work with you to automate, scale and monitor your business through web and mobile based applications, providing high Return on Investment (RoI).
+
+								<ul class="about_sp">
+									<li><span>We have a strong proven record of delivering on complex projects and rapid execution.</span></li>
+									<li><span>We specialise in full stack web applications and rapid prototyping</span></li>
+									<li><span>We keep it simple, stick to our time lines and produce good-quality products</span></li>										
+								</ul>						   
+
+								<p>Rigvee Technologies will allow you to take a step back and focus on the bigger squares of your commercial life, while we complete you by filling in the smaller squares.</p>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+					<li>
+						<div class="about_block2">
+							<div class="grid_12 ">
+								<h4>Meet The Team</h4>
+								<div class="grid_4 team_block">
+									<a href="javascript:void(0);"><img src="images/team1.jpg" alt="" /></a>
+									<h4>Shashank Singla</h4>
+									<!-- <p>Shashank Singla</p> -->
+									<p>IIT Delhi, India<br>
+									Hacker, Founded Yantrr (Embedded/Robotics) company, Worked at Goldman Sachs</p>
+
+									<ul class="team_soc">
+										<li><a href="mailto:shashank@rigvee.com" class="soc1"></a></li>
+										<li><a href="http://in.linkedin.com/in/shashanksingla/"  target="blank" class="soc4"></a></li>
+										<li><a href="https://www.facebook.com/shashank.singla"  target="blank" class="soc3"></a></li>											
+									</ul>
+								</div>
+								<div class="grid_4 team_block">
+									<a href="javascript:void(0);"><img src="images/team2.jpg" alt="" /></a>
+									<h4>Ankit Miital</h4>
+									<!-- <p>Ankit Mittal</p> -->
+									<p>IIT Bombay, India<br>
+									Hacker, Open Source Enthusiast, Powered moodle at EduPristine.com	</p>
+									<ul class="team_soc">
+										<li><a href="mailto:ankit@rigvee.com" target="blank"  class="soc1"></a></li>
+										<li><a href="http://in.linkedin.com/pub/ankit-mittal/24/894/8b2" target="blank" class="soc4"></a></li>
+										<li><a href="https://www.facebook.com/ankitml" class="soc3"></a></li>										
+									</ul>
+								</div>
+								<div class="grid_4 team_block omega">
+									<a href="javascript:void(0);"><img src="images/team3.jpg" alt="" /></a>
+									<h4>Vijay Bansal</h4>
+									<!-- <p>Sanchit</p> -->
+									<p>ISB Hyderabad, India<br>
+									Growth Hacker, Likes exploring new technologies,  Worked at Goldman Sachs	</p>
+									<ul class="team_soc">
+										<li><a href="mailto:vijay@rigvee.com" class="soc1"></a></li>
+										<li><a href="http://www.linkedin.com/profile/view?id=49079736&authType=name&authToken=_X4I&trk=prof-sb-browse_map-name" target="blank" class="soc4"></a></li>
+										<li><a href="https://www.facebook.com/vijaybansal3000" target="blank"  class="soc3"></a></li>										
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+					<li>
+						<div class="about_block3">						
+							<div class="grid_5">
+								<h4>Why Choose Us</h4>
+								<div class="tabbable">
+									<ul class="nav nav-tabs">
+										<li class="active"><a href="#1" data-toggle="tab">We Partner</a></li>
+										<li><a href="#2" data-toggle="tab">We Deliver</a></li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane active" id="1">
+											<img src="images/tab_img2.jpg" alt="" />
+											<p>At the core we are more than a vendor, more than a team of diverse software professionals. We are business consultants, challengers of core business assumptions. We work with you to automate, scale and monitor your business.</p>
+											<p>Our promises are straightforward. Our task is to make our clients successful and ready for growth. To do that we carve out a digital strategy and implement it through our web and mobile services.</p>
+											
+										</div>
+										<div class="tab-pane" id="2">
+											<img src="images/tab_img1.jpg" alt="" />
+											<p> Give us an idea of what you want and we will build it for you.</p>
+
+											 <p>With a core consisting of some of the best minds and motivated individuals from top notch universities, we have the perfect blend to develop a high quality products and deliver premium service.</p>   
+
+											 <p>We give our clients the earliest delivery consistent with quality - whatever the inconvenience to us.</p>
+
+
+
+										</div>										
+									</div>
+								</div>
+							</div>
+							<div class="grid_7 omega">
+								<h4>Testimonials</h4>
+								<div class="testim_in">
+									<div class="testim_block">
+										Shashank is a highly motivated individual with great technical and soft skills and is able to collaborate and navigate effectively within a large organization to deliver award-winning products and services.
+										<span></span>
+									</div>
+									<div class="author">Jason Tam, VP, Goldman Sachs</div>
+									<div class="clear"></div>
+								</div>
+								<div class="testim_in">
+									<div class="testim_block">
+										Shashank has proved his thought leadership and technical skills by delivering high quality products in record time. His work is thorough which reflects his ability to solve complex problems.
+										<span></span>
+									</div>
+									<div class="author">Ravindranath Gnanaiah, VP, Goldman Sachs</div>
+									<div class="clear"></div>
+								</div>
+								<div class="testim_in">
+									<div class="testim_block">
+										Ankit is able to understand a problem and deliver a good solution within the constraints. Doing this he does not cut corners, but works to make his already existing code better.
+										<span></span>
+									</div>
+									<div class="author">Prasad Ajinkya, CTO, Edupristine</div>
+									<div class="clear"></div>
+								</div>
+							</div>											
+							<div class="clear"></div>		
+						</div>
+					</li>					
+				</ul>
+				<div class="clear"></div>
+				<div id="pager2" class="pager"></div>
+			</div>
+		</div>		
+		
+		<div class="about_links">
+			<div id="ab_link1" class=""></div>
+			<div id="ab_link2" class=""></div>
+			<div id="ab_link3" class=""></div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- Divider -->
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide3">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p><span>All lasting business is built on friendship.</span></p>
+			</div>
+		
+		</div>
+		
+		<div class="bottom_center_bg"><img src="images/bottom_center_bg.png" /></div>
+		
+	</div>
+</div>
+
+<!-- Services -->
+<div class="slide" id="slide6" data-slide="4" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h1><span>Services</span></h1>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="content">
+		    <div class="grid_4">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_wb.png" />
+					<img class="iconimg_h" src="images/icon_wb_h.png" />
+					<p>Web<br>Applications</p>
+					Our in-house team specialises in full stack Web application development using cutting edge technologies					
+				</a>
+			</div>
+			
+			<div class="grid_4">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_rp.png" />
+					<img class="iconimg_h" src="images/icon_rp_h.png" />
+					<p>Rapid<br>Protoyping</p>
+					Need something done in a zippy, call us. We take pride in delivering solutions in hours, not days, not weeks
+				</a>
+			</div>
+
+			<div class="grid_4 omega">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_web.png" />
+					<img class="iconimg_h" src="images/icon_web_h.png" />
+					<p>Data<br>Analytics</p>
+					We build meaningful dashboards & reports to give you insights and keep you and your team always up-to-date
+				</a>
+			</div>
+
+			<div class="grid_4">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_mob.png" />
+					<img class="iconimg_h" src="images/icon_mob_h.png" />
+					<p>Mobile<br>Apps</p>
+					We build native and hybrid mobile apps for all mobile platforms to keep your users connected on the go
+				</a>
+			</div>
+			
+			<div class="grid_4">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_ent.png" />
+					<img class="iconimg_h" src="images/icon_ent_h.png" />
+					<p>Enterprise<br>Development</p>
+					We build scalable enterprise solutions to help corporations increase their profitability and efficiency 
+				</a>
+			</div>
+
+			<div class="grid_4 omega">
+				<a class="serv_block" href="javascript:void(0);" alt="" >
+					<img class="iconimg" src="images/icon_ts.png" />
+					<img class="iconimg_h" src="images/icon_ts_h.png" />
+					<p>Technology<br>Strategy</p>
+					We collaborate with companies to translate their business goals into unique IT products & services 
+				</a>
+			</div>
+			
+		</div>
+	
+	</div>
+</div>
+
+
+<!-- Divider -->
+<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide5">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p>We give you the earliest delivery consistent with quality - whatever the inconvenience to us. </p>
+			</div>
+		
+		</div>
+		
+		<div class="bottom_center_bg"><img src="images/bottom_center_bg.png" /></div>
+		
+	</div>
+</div>
+
+<!-- Portfolio -->
+<div class="slide" id="slide4" data-slide="6" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>Portfolio</span></h1>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="contenet">
+			<div class="gallery-list">
+				<!-- portfolio_block -->
+				<div>                                  
+					<div class="grid_4 project_block">
+						<div class="hover_img">
+							<img src="images/portfolio/moodle.png" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/moodle1.png" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="http://moodle.edupristine.com/demo.php" target="blank">View item</a></span>
+						</div>
+						<span style='display:none'><a href="images/portfolio/full/moodle2.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle3.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle3-2.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle4.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle5.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle6.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/moodle7.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<div class="item_description">
+							<p>Edupristine's Moodle</p>
+							Beautiful looking Learning Mangement System Customized for self paced courses							
+						</div>
+					</div>
+
+					<div class="grid_4 project_block">
+						<div class="hover_img">
+							<img src="images/portfolio/intraday.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/intraday1.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>	
+						<span style='display:none'><a href="images/portfolio/full/intraday2.jpg" rel="prettyPhoto[portfolio1]"></a></span>					
+						<div class="item_description">
+							<p>CFTC Client Protection</p>
+							Finance Industry's first intra-day dashboard to monitor customer asset segregation							
+							
+						</div>
+					</div>
+					<div class="grid_4 project_block omega">
+						<div class="hover_img">
+							<img src="images/portfolio/sliderule.png" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/sliderule1.png" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="http://launch.mysliderule.com/" target="blank" >View item</a></span>
+						</div>
+						<span style='display:none'><a href="images/portfolio/full/sliderule3.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/sliderule2.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<div class="item_description">
+							<p>SliderRule</p>
+							Aggregation, review and comparison site for online courses and MOOCs (like coursera)
+						</div>
+					</div>
+							
+					<span style='display:none'><a href="images/portfolio/full/recco.png" rel="prettyPhoto[portfolio1]"></a></span>
+					<div class="clear"></div>
+				</div>   
+				<!-- //portfolio_block -->   
+				<div>   
+
+					<div class="grid_4 project_block">
+						<div class="hover_img">
+							<img src="images/portfolio/gachecker.png" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/gachecker.png" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="http://www.gachecker.com" target="blank">View item</a></span>
+						</div>
+						<span style='display:none'><a href="images/portfolio/full/gachecker.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<div class="item_description">
+							<p>Google Analytics Checker</p>
+							Solution to crawl all pages of a given website and analyze the existence & type of
+							google analytics code.
+						</div>
+					</div>                               
+					
+					<div class="grid_4 project_block">
+						<div class="hover_img">
+							<img src="images/portfolio/wp.png" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/wp2.png" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>	
+						<span style='display:none'><a href="images/portfolio/full/wp.png" rel="prettyPhoto[portfolio1]"></a></span>					
+						<span style='display:none'><a href="images/portfolio/full/wp2.png" rel="prettyPhoto[portfolio1]"></a></span>					
+						<span style='display:none'><a href="images/portfolio/full/wp3.png" rel="prettyPhoto[portfolio1]"></a></span>					
+						<span style='display:none'><a href="images/portfolio/full/wp4.png" rel="prettyPhoto[portfolio1]"></a></span>					
+						<div class="item_description">
+							<p>Wordpress Sites</p>
+							A set of wordpress sites made for commercial and personal purposes.
+							
+						</div>
+					</div>
+					<div class="grid_4 project_block omega">
+						<div class="hover_img">
+							<img src="images/portfolio/bb.png" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/bb.png" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="http://brainbought.com/" target="blank" >View item</a></span>
+						</div>
+						<span style='display:none'><a href="images/portfolio/full/bb.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/bb2.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<span style='display:none'><a href="images/portfolio/full/bb3.png" rel="prettyPhoto[portfolio1]"></a></span>
+						<div class="item_description">
+							<p>Brainbought</p>
+							A simple Learning Management System in Django aimed at sharing tutorials
+							for investments.
+						</div>
+					</div>
+							
+					<span style='display:none'><a href="images/portfolio/full/recco.png" rel="prettyPhoto[portfolio1]"></a></span>
+					<div class="clear"></div>
+				</div>   
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- Divider -->
+<div class="slide" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide7">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p></p>
+			</div>
+		
+		</div>
+		
+		<div class="bottom_center_bg"><img src="images/bottom_center_bg.png" /></div>
+		
+	</div>
+</div>
+
+<!-- contact Us -->
+<div class="slide" id="slide8" data-slide="8" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>Contact</span></h1>	
+		</div>
+		<div class="clear"></div>
+		
+		<div class="grid_8">
+			<h4>Contact Form</h4>
+			<div class="contact_form">  
+				<div id="note"></div>
+				<div id="fields">
+					<form id="ajax-contact-form" action="">
+						<input type="text" name="name" value="" placeholder="Name" />
+						<!-- <input type="text" name="subject" value="" placeholder="Phone" /> -->
+						<input type="text" name="email" value="" placeholder="Email" />
+						<textarea name="message" id="message" placeholder="Message"></textarea>
+						<div class="clear"></div>
+						<input type="reset" class="contact_btn" value="Clear Form" />
+						<input type="submit" class="contact_btn send_btn" value="Send" />
+						<div class="clear"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="grid_4 contact_det_block omega">
+			<h4>Contact Details</h4>			
+			<ul class="foot_block_intouch">
+				<li class="touch_phone"><p>(+91) 999 1370 666/444/222</p></li>
+				<!--<li class="touch_clock"><p>Mon - Sat 9:00am - 6:00 pm</p></li>-->
+				<li class="touch_mail"><a href="mailto:sales@rigvee.com">sales@rigvee.com</a></li>
+				<li class="touch_mail"><a href="mailto:jobs@rigvee.com">jobs@rigvee.com</a></li>
+				<li class="touch_site"><a href="javascript:void(0);">www.rigvee.com</a></li>
+			</ul>
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+	
+	<div id="map_block"><iframe width="100%" height="722" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=karnal&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.409448,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Karnal,+Haryana,+India&amp;ll=29.685693,76.990482&amp;spn=0.01085,0.021136&amp;t=m&amp;z=14&amp;output=embed"></iframe></div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+	<div class="container clearfix">
+		<div class="copyright">Rigvee Technologies &copy; 2013 | <a href="javascript:void(0);">Privacy Policy</a></div>
+		<div id="back_top"><a class="button" title="" data-slide="1">back to top</a></div>
+	</div>
+</div>
+
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('2597-384-10-6143');/*]]>*/</script><noscript><a href="https://www.olark.com/site/2597-384-10-6143/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+	
+</body>
+</html>

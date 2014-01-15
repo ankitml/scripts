@@ -1,0 +1,73 @@
+#!/bin/bash
+# backup script 
+
+#Today's date and Time 
+DATE=$(date +"%d-%m-%Y")
+TIME=$(date +"%H:%M")
+
+#This is the directory name to backup
+web_dir="contctus"
+dir="/var/www/"
+cd $dir
+
+echo "------------- $web_dir's backup starts --------------->"
+
+tar -zcf $web_dir.tar.gz $web_dir
+mv $web_dir.tar.gz $web_dir$DATE$TIME.tar.gz
+
+# empty the backup directory 
+rm /home/contctus/backup/*
+
+
+mv $web_dir$DATE$TIME.tar.gz /home/contctus/backup
+
+
+echo "--------- !! $web_dir's backup done !! -----------------"
+
+hostname="localhost"
+username="root"
+# password="n0wL!nux"
+password="r2XL8pW9SaVen7cM"
+database_name="contctus"
+dev="contctus_dev"
+
+echo "----------- $database_name database backup starts ----------->"
+mysqldump --host=$hostname --user=$username --password=$password $database_name > $database_name.sql
+tar -zcf $database_name.sql.tar.gz $database_name.sql
+
+mv $database_name.sql.tar.gz /home/contctus/backup
+mv $database_name.sql /home/contctus/backup
+
+echo "--------- !! $database_name's backup done !! -----------------"
+
+
+cd /home/contctus/
+
+# remove if existing backup.tar.gz
+rm /home/contctus/backup.tar.gz
+
+# making tar of backup directory containing contctus dir and contctus database
+tar -zcf backup.tar.gz backup/
+
+echo " ------------------ !!!!! backup done !!!!! ------------------------" 
+
+
+#importing sql into $dev 
+
+echo "-------------- importing starts into $dev database ---------------"
+echo "------- replacing the \"contct.us\" with \"singlas.in\" ------------->"
+
+sed -i 's/contct.us/singlas.in/g' /home/contctus/backup/$database_name.sql
+
+# importing the $database_name.sql into $dev after replacement
+echo "--------- importing $database_name.sql into $dev ------->"
+
+mysql -u $username -p$password -h $hostname $dev < /home/contctus/backup/$database_name.sql
+
+echo "---------- !! importing done !! -------------------"
+
+#copying /var/www/contctus into /var/www/contctus_dev recursively
+echo "------copying the /var/www/contctus into /var/www/contctus_dev ----------->"
+cp -r /var/www/contctus /var/www/contctus_dev
+
+
