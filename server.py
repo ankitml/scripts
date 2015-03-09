@@ -32,6 +32,14 @@ class SecureHTTPServer(HTTPServer):
 
 
 class SecureHTTPRequestHandler(SimpleHTTPRequestHandler):
+
+    def end_headers(self):
+        self.send_my_headers()
+        SimpleHTTPRequestHandler.end_headers(self)
+
+    def send_my_headers(self):
+        self.send_header("Access-Control-Allow-Origin", "*")
+
     def setup(self):
         self.connection = self.request
         self.rfile = socket._fileobject(self.request, "rb", self.rbufsize)
