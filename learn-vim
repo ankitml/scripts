@@ -1,0 +1,57 @@
+GENERAL
+    to get help type :h <any command>
+    like :h ]p
+    . can be used to repeat previous command
+
+
+INDENTATION
+    >> or << sets the indentation and then . can be used to repeat the direction of indentation
+
+    == also doesn something in vim. automated indentation. Didnt work in python. HTML and js might work. 
+
+    How to set up different shift widths in python. html and js is to be searched. 
+
+    ]p is paste at current level of indentation instead of starting of the line. 
+
+
+    instead of j if + is used to go down movememnt it straight away takes to first letter of the line. (first non white space letter)
+
+
+TABS
+    to open multiple tabs in vim is -p flag while opening vim
+
+    vim -p afile anotherfile anotheranotherfile
+    to open another file from inside vim in a new tab use
+    :tabe newfile
+
+    to move to next tab use 'gt' command and 'gT' for previous file
+    these both gt and gT are loopable
+
+    to move directly to a tab use 1gt, 2gt ot xgt fot xth tab
+
+    Tabs can be reorganised. :tabm 2 takes the current tab to tab directly after 2nd one. 
+    :tabm takes it directly to the last
+    
+
+COPYING TEXT
+    :-13,-9t. - copy the text between -13 and -9 lines and paste it at current position
+
+SEARCH
+    :-13,-9s/orignialtest/replacedtest replaces the words in mentioned lines
+    :-13,.s/blah/bluh here . is current position so replace stuff in all lines between -13 and current one..
+    :s/u/uu does replace on single line
+    :%s/u/uu on whole file
+    The serarch term can be a regex
+    c flag can be done for confirmation. :s/w/ppp/c
+    i flag is for case insensitive search
+    g flag means global. all lines and all occurances in a line
+    There is gsearch facility for searching across files
+
+DELETE TEXT
+    :-13,-12d - deletes the mentioned lines
+
+
+SPLIT
+    :windo prefix to any command makes it applied to all opwn splits
+    :windo e! reloads all files and removing all unsaved changes
+    :windo %s/integer/float/g | w - makes the search and replace across splits and saves all the files
