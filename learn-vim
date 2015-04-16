@@ -3,6 +3,9 @@ GENERAL
     like :h ]p
     . can be used to repeat previous command
 
+MAPPINGS
+    map is recursive, noremap is non recursive
+    map! is only for insert mode
 
 INDENTATION
     >> or << sets the indentation and then . can be used to repeat the direction of indentation
