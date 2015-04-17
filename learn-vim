@@ -48,6 +48,16 @@ SEARCH AND REPLACE
 
 DELETE TEXT
     :-13,-12d - deletes the mentioned lines
+    da", da{, da( - delte around <delimiter>. this deletes around the text inside the delimiter and delimiter itself
+
+MODIFY TEXT
+    :ci<delimiter> ci" will change everything inside the double quotes if you are in a double quote string
+        ci{ will change everything inside the curly braces you are in, and similarly ci(
+        this also works woth things other than delimiters like, w for word,
+        this also works with a instead of i which is around and includes delimiters
+    gi would take you to the position where you were in insert mode last time and open insert mode again. 
+        this is for people to roam around, checkout stuff and then come back and work
+
 
 SPLIT
     :windo prefix to any command makes it applied to all opwn splits
@@ -58,8 +68,9 @@ SPLIT
 MOVE AROUND
     { and } to move between paragraphs
     % to move between matching braces or prenthesis
+    gg to start of the file
 
-    
+   "fafeeaf" "oijoi" 
 TODO
     :help text-objects
     :vim django bundle
