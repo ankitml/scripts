@@ -44,5 +44,9 @@ also moving can be like vim in copy mode
     The selected text will now be in your system clipboard.
 
 
+    Split window can take up an argument which is shell command to run. Good thing about this is that when this process ends, the pane is closed down automatically. 
+    prefix h is bound to htop, q will quit the pane
 
+    Using this, make a shortcut to a todo file
 
+    Explore the plugin vim-tmux-runner

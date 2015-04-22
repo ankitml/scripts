@@ -64,6 +64,8 @@ SPLIT
     :windo e! reloads all files and removing all unsaved changes
     :windo %s/integer/float/g | w - makes the search and replace across splits and saves all the files
     :only closes all other splits except the current context split
+    ,- maximizes the current split to full window 
+    ,= restores the original layout by demaximizing the maximized window
 
 MOVE AROUND
     { and } to move between paragraphs
