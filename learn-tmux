@@ -1,0 +1,6 @@
+#vim tmux navigator (install this)
+using -n with a key binding makes it available without the prefix key.
+
+set -g status-right "<some pattern, google list of status patterns available>"
+#p is pane number, there is a way to put in any shell command in here
+a shell comand for battery with color coding can be created and that can be shown in the status
