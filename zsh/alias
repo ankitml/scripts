@@ -1,0 +1,35 @@
+#spell correctors
+alias cim="vim"
+alias bc="sudo"
+alias got="git"
+alias exir="exit"
+
+
+#shortcuts
+alias task="cd ~/Documents/tasks/feb16; vim ."
+alias know="cd ~/Documents/knowledge/; vim ."
+alias blogs="cd ~/Documents/blogs/; vim ."
+alias pytest="python3 -m pytest"
+alias v="vim"
+alias pyshell="python manage.py shell_plus"
+alias server="python manage.py runserver"
+alias discuss="cd ~/repos/discuss-qna/app/"
+alias weather="curl -4 wttr.in/Mumbai"
+
+#new features
+alias hs="cat -n ~/.histfile | grep"
+
+#git
+alias gco='git checkout'
+alias m='git checkout master'
+alias gd='git diff'
+alias gp='git push origin'
+alias gs='git status'
+alias ga='git add'
+
+# to be removed
+alias test_server="ssh -i ~/Documents/dev-stuff/dev-us.pem ubuntu@52.90.200.24"
+alias dev="ssh -i ~/Documents/dev-stuff/dev-us.pem -t ubuntu@devforumapi.upgrad.com 'tmux attach -t foo'"
+alias discussProd="ssh -i ~/Documents/dev-stuff/prod.pem ubuntu@54.254.197.123"
+alias assessProd="ssh -i ~/Documents/dev-stuff/prod.pem ubuntu@54.169.248.116"
+alias devD="ssh -i ~/Documents/dev-stuff/dev-us.pem -t ubuntu@devforumapi.upgrad.com"
