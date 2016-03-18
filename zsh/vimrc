@@ -32,6 +32,8 @@ Plugin 'ervandew/supertab' " tab completion
 Plugin 'onur/vim-motivate'
 " Plugin 'nvie/vim-flake8' "PEP8 checker on F7
 Plugin 'shime/vim-livedown.git'
+Plugin 'chip/vim-fat-finger' " spell corrector
+Plugin 'airblade/vim-gitgutter'
 
 
 call vundle#end()
@@ -91,6 +93,7 @@ set autoindent " always set autoindenting on
 set copyindent " copy the previous indentation on autoindenting
 set hlsearch " highlight search terms
 set number
+set relativenumber
 nmap <f3> :set number! number?<cr> 
 "toggle line numbers by F3
 

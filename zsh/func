@@ -33,6 +33,12 @@ function gcp {
 
 }
 
+function gpull {
+  branch=`git_branch_name`
+  git pull origin $branch
+}
+  
+
 function gcm {
   git commit -m "minor changes applied"
   branch=`git_branch_name`
@@ -42,3 +48,5 @@ function gcm {
 function envpy {
   source ~/virtualenvs/$1/bin/activate
 }
+
+
