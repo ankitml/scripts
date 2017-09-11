@@ -17,23 +17,20 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 " vim git plugin
-Plugin 'tpope/vim-fugitive'
 " its a colorscheme
-Plugin 'https://github.com/freeo/vim-kalisi'
 " folds for python
 Plugin 'tmhedberg/SimpylFold'
 "fuzzy file search activated by -
 Plugin 'kien/ctrlp.vim'
 " syntax checking
-Plugin 'scrooloose/syntastic' " ok.
 Plugin 'flazz/vim-colorschemes'  " nice colors!
+Plugin 'tpope/vim-fugitive.git' " for git integration
 Plugin 'christoomey/vim-tmux-navigator' "split screen movements in sync tmux
 Plugin 'ervandew/supertab' " tab completion
 Plugin 'onur/vim-motivate'
-" Plugin 'nvie/vim-flake8' "PEP8 checker on F7
+Plugin 'nvie/vim-flake8' "PEP8 checker on F7
 Plugin 'shime/vim-livedown.git'
 Plugin 'chip/vim-fat-finger' " spell corrector
-Plugin 'airblade/vim-gitgutter'
 
 
 call vundle#end()
@@ -65,7 +62,7 @@ endif
 "if has("autocmd")
 "  filetype plugin indent on
 "endif
-let mapleader = ","
+let mapleader = " "
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -133,7 +130,7 @@ set wildmode=full
 " hide matches on <leader>space
 nnoremap <leader><space> :nohlsearch<cr>
 
-inoremap jj <ESC>
+inoremap jk <ESC>
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
@@ -159,13 +156,7 @@ let g:SimpleFold_docstring_preview = 1
 
 "syntax checking
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checker_args='--ignore=E501'
 
 "give us 256 colors
 set term=screen-256color
@@ -181,9 +172,9 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,u :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-" let g:flake8_quickfix_height=3
-" let g:flake8_show_quickfix=0
-" let g:syntastic_quiet_messages = { "type": "style" }
-" let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_flake8_post_args='--ignore=E501,F403'
+let g:flake8_quickfix_height=3
+let g:flake8_show_quickfix=0
+
+nnoremap <space>gs :Gstatus<CR>
+set list listchars=trail:.,extends:>
 

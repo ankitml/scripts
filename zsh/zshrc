@@ -18,7 +18,7 @@ zstyle :compinstall filename '/Users/ankitmittal/.zshrc'
 #setting up aliases
 source $HOME/.alias
 source $HOME/.func
-source /Users/ankitmittal/repos/external/zsh-git-prompt/zshrc.sh
+source /Users/ankitmittal/repos/sandbox/zsh/zsh-git-prompt/zshrc.sh
 PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='%B%~%b$(git_super_status) %# '
 zstyle ':completion:*' '' matcher-list 'm:{a-z}={A-Z}'
@@ -29,11 +29,13 @@ hx() {
 }
 
 # automatically do an ls after doing cd
-chpwd() {
-  ls -G
-}
+#chpwd() {
+#  ls -G
+#}
 
 PATH=$PATH:/usr/local/sbin
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
 
 
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
