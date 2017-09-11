@@ -9,20 +9,20 @@ function git_new {
 
 function git-on-master {
   branch=`git_branch_name`
-  git checkout master && git pull --rebase 
+  git checkout master && git pull --rebase
   git checkout $branch
   git rebase master
 }
 
 function git-on-develop {
   branch=`git_branch_name`
-  git checkout develop && git pull --rebase 
+  git checkout develop && git pull --rebase
   git checkout $branch
   git rebase develop
 }
 
 function gc {
-  git commit -m "$*"
+  git commit -m "$*" -n
 }
 
 
@@ -37,16 +37,17 @@ function gpull {
   branch=`git_branch_name`
   git pull origin $branch
 }
-  
-
-function gcm {
-  git commit -m "minor changes applied"
-  branch=`git_branch_name`
-  git push origin $branch
-}
 
 function envpy {
-  source ~/virtualenvs/$1/bin/activate
+  source ~/.virtualenvs/$1/bin/activate
 }
 
-
+function workon {
+  envpy $1
+  # if it is in repos
+  if [[ -a ~/repos/$1 ]]; then
+    cd ~/repos/$1/
+  elif [[ -a ~/repos/sandbox/$1 ]]; then
+    cd ~/repos/sandbox/$1/
+  fi
+}
