@@ -5,7 +5,7 @@ SAVEHIST=20000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/ankitmittal/.zshrc'
+# zstyle :compinstall filename '/Users/ankitmittal/.zshrc'
 
 # autoload -Uz compinit
 # compinit
@@ -13,13 +13,10 @@ zstyle :compinstall filename '/Users/ankitmittal/.zshrc'
 
 
 #copying for autojump utility
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 #setting up aliases
-source ./alias
-source ./funcs
-source /Users/ankitmittal/repos/sandbox/zsh/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
+source $HOME/repos/sandbox/scripts/zsh/alias
+source $HOME/repos/sandbox/scripts/zsh/func
 zstyle ':completion:*' '' matcher-list 'm:{a-z}={A-Z}'
 
 hx() {
@@ -27,5 +24,15 @@ hx() {
     $(awk $var$1 ~/.histfile)
 }
 
-PATH=$PATH:/usr/local/sbin
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+
+export EDITOR='vim'
+export ZSH_TMUX_AUTOSTAR=Ttrue
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/local/bin
+
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+plugins=(git osx tmux python history z)
+

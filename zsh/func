@@ -51,3 +51,8 @@ function workon {
     cd ~/repos/sandbox/$1/
   fi
 }
+
+
+function new_env {
+
+}

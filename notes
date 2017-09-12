@@ -1,0 +1,42 @@
+OSX plugin commands
+
+Command        Description
+tab        Open the current directory in a new tab
+split_tab        Split the current terminal tab horizontally
+vsplit_tab        Split the current terminal tab vertically
+ofd        Open the current directory in a Finder window
+pfd        Return the path of the frontmost Finder window
+pfs        Return the current Finder selection
+cdf        cd to the current Finder directory
+pushdf        pushd to the current Finder directory
+quick-look        Quick-Look a specified file
+man-preview        Open a specified man page in Preview app
+showfiles        Show hidden files
+hidefiles        Hide the hidden files
+itunes        Control iTunes. User itunes -h for usage details
+spotify        Control Spotify and search by artist, album, track and etc.
+
+
+
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+# Find python file
+alias pyfind='find . -name "*.py"'
+
+# Remove python compiled byte-code in either current directory or in a
+# list of specified directories
+function pyclean() {
+    ZSH_PYCLEAN_PLACES=${*:-'.'}
+    find ${ZSH_PYCLEAN_PLACES} -type f -name "*.py[co]" -delete
+    find ${ZSH_PYCLEAN_PLACES} -type d -name "__pycache__" -delete
+}
+
+# Grep among .py files
+alias pygrep='grep --include="*.py"'
+
+If h is called, your command history is listed. Equivalent to using history
+
+If hsi is called with an argument, a case insensitive grep search is performed on your command history, looking for commands that match the argument provided
+
+If hsi is called without an argument you will help on grep argumen
+
