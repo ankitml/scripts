@@ -31,6 +31,7 @@ Plugin 'onur/vim-motivate'
 Plugin 'nvie/vim-flake8' "PEP8 checker on F7
 Plugin 'shime/vim-livedown.git'
 Plugin 'chip/vim-fat-finger' " spell corrector
+Plugin 'vimwiki/vimwiki' "wiki
 
 
 call vundle#end()
@@ -43,9 +44,7 @@ filetype plugin indent on
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+syntax on
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -143,8 +142,8 @@ iabbrev adn and
 iabbrev pdb import ipdb<CR>ipdb.set_trace(
 set gdefault " always assume /g ie matchies all matches in a line
 let g:ctrlp_custom_ignore =  '\v\.(js|svg|txt|json|html|styl)$'
-:set textwidth=120
-:set colorcolumn=+1
+"set textwidth=120
+set colorcolumn=+1
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=240 guibg=#2c2d27
 let &colorcolumn="80,".join(range(100,999),",")
@@ -172,10 +171,10 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,u :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-let g:flake8_quickfix_height=3
-let g:flake8_show_quickfix=0
 
 nnoremap <space>gs :Gstatus<CR>
 set list listchars=trail:.,extends:>
+let g:vimwiki_list = [
+                        \{'path': '~/Google Drive/wiki'},
+                \]
 
-set clipboard=unnamed

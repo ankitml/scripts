@@ -1,3 +1,4 @@
+haha
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
@@ -159,3 +160,4 @@ let g:syntastic_check_on_wq = 0
 
 "give us 256 colors
 set term=screen-256color
+set autoread

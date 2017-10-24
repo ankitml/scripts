@@ -39,20 +39,42 @@ function gpull {
 }
 
 function envpy {
-  source ~/.virtualenvs/$1/bin/activate
+  if [[ $2 == "new" ]]; then
+    if [[ -a ~/.virtualenvs/$1 ]]; then
+      echo "Already exists, activating that one"
+    else
+      python3.6 -m venv ~/.virtualenvs/$1
+    fi
+    source ~/.virtualenvs/$1/bin/activate
+  else
+    source ~/.virtualenvs/$1/bin/activate
+  fi
 }
 
 function workon {
   envpy $1
+
   # if it is in repos
   if [[ -a ~/repos/$1 ]]; then
     cd ~/repos/$1/
   elif [[ -a ~/repos/sandbox/$1 ]]; then
     cd ~/repos/sandbox/$1/
   fi
+
+  tmux new-session -A -s $1
 }
 
+function  monolithssh {
+  thssh
+  if [ "$#" -eq 0 ]
+  then
+      ip=$(history| grep "monolithssh "| grep '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' |tail -1 |sed 's/^.* //')
+  fi
 
-function new_env {
+  if [ "$#" -eq 1 ]
+  then
+      ip=$1
+  fi
 
+  ssh -Jubuntu@bastion.us-east-1.prod.tophat.com ubuntu@$ip
 }
