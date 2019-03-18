@@ -39,25 +39,35 @@ function gpull {
 }
 
 function envpy {
-  if [[ $2 == "new" ]]; then
-    if [[ -a ~/.virtualenvs/$1 ]]; then
-      echo "Already exists, activating that one"
-    else
-      python3.6 -m venv ~/.virtualenvs/$1
-    fi
-    source ~/.virtualenvs/$1/bin/activate
+  if [ -z "$1" ]
+  then
+      source venv/bin/activate
   else
-    source ~/.virtualenvs/$1/bin/activate
+    if [[ $2 == "new" ]]; then
+      if [[ -a ~/.virtualenvs/$1 ]]; then
+        echo "Already exists, activating that one"
+      else
+        python3.7 -m venv ~/.virtualenvs/$1
+      fi
+      source ~/.virtualenvs/$1/bin/activate
+    else
+      source ~/.virtualenvs/$1/bin/activate
+    fi
   fi
+}
+
+function currency {
+  curl "https://api.ofx.com/PublicSite.ApiService/SpotRateHistory/allTime/USD/$1?DecimalPlaces=6&ReportingInterval=daily" -H 'Accept: application/json' > $1.json
 }
 
 function workon {
   # if it is in repos
   if [[ -a ~/repos/$1 ]]; then
     cd ~/repos/$1/
-  elif [[ -a ~/repos/sandbox/$1 ]]; then
-    cd ~/repos/sandbox/$1/
+  elif [[ -a ~/repos/swissborg/$1 ]]; then
+    cd ~/repos/swissborg/$1/
   fi
+  envpy $1
 }
 
 function  prodssh {

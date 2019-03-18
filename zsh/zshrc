@@ -15,8 +15,8 @@ bindkey -v
 #copying for autojump utility
 
 #setting up aliases
-source $HOME/repos/sandbox/scripts/zsh/alias
-source $HOME/repos/sandbox/scripts/zsh/func
+source $HOME/repos/personal/scripts/zsh/alias
+source $HOME/repos/personal/scripts/zsh/func
 zstyle ':completion:*' '' matcher-list 'm:{a-z}={A-Z}'
 
 hx() {

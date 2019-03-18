@@ -140,6 +140,7 @@ set background=dark
 colorscheme Chasing_Logic
 " colorscheme zenburn
 map - :CtrlP<cr>
+map ` :!pyre --source-directory . check <enter>
 iabbrev adn and
 iabbrev pdb import ipdb<CR>ipdb.set_trace(
 set gdefault " always assume /g ie matchies all matches in a line
