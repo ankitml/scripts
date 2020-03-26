@@ -1,8 +1,9 @@
+# https://medium.com/python-pandemonium/asyncio-coroutine-patterns-beyond-await-a6121486656f
 import asyncio
+import timeit
 import aiohttp
 
 URL_TEMPLATE = "https://hacker-news.firebaseio.com/v0/item/{}.json"
-
 
 async def fetch_numberof_comments(session, post_id):
     url = URL_TEMPLATE.format(post_id)
@@ -16,7 +17,6 @@ async def fetch_numberof_comments(session, post_id):
                  for kid_id in kids]
         kid_results = await asyncio.gather(*tasks)
         number_of_comments += sum(kid_results)
-        print(f'POST id {post_id} has {len(kids)} no of kids')
         return number_of_comments
 
 
