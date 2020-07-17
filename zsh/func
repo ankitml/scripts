@@ -1,29 +1,3 @@
-function git_branch_name {
-  val=`git branch 2>/dev/null | grep '^*' | colrm 1 2`
-  echo "$val"
-}
-
-function git_new {
-  git checkout -b $1 && git push -u origin $1
-}
-
-function git-on-master {
-  branch=`git_branch_name`
-  git checkout master && git pull --rebase
-  git checkout $branch
-  git rebase master
-}
-
-function git-on-develop {
-  branch=`git_branch_name`
-  git checkout develop && git pull --rebase
-  git checkout $branch
-  git rebase develop
-}
-
-function gc {
-  git commit -m "$*" -n
-}
 
 
 function gcp {
